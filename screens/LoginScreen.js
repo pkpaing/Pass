@@ -9,12 +9,13 @@ import {
   View,
   Image,
 } from "react-native";
-import { auth } from "../firebase";
+import { auth, db } from "../firebase";
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   onAuthStateChanged,
 } from "firebase/auth";
+import { collection, getDocs } from "firebase/firestore";
 
 const LoginScreen = () => {
   const [email, setEmail] = useState("");
